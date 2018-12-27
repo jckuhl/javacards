@@ -19,10 +19,4 @@ public interface CardPlayable {
      * Shuffles a CardList
      */
     void shuffle();
-
-    /**
-     * Provides a getter for any class implementing CardPlayable
-     * @return CardList object
-     */
-//    CardList getCards();
 }

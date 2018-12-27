@@ -33,12 +33,12 @@ public class Deck implements CardPlayable, Iterable<Card> {
     private CardList populate() throws Exception {
         if(this.cards.size() == 0) {
             int value = 1;
-            int suit = 1;
-            while(suit < 5) {
+            int suit = 4;
+            while(suit > 0) {
                 Card card = new Card(Suit.getSuit(suit), value++);
                 this.cards.add(card);
                 if(value == 14) {
-                    suit++;
+                    suit--;
                     value = 1;
                 }
             }
@@ -65,11 +65,6 @@ public class Deck implements CardPlayable, Iterable<Card> {
     public void shuffle() {
         this.cards.shuffle();
     }
-
-//    @Override
-//    public CardList getCards() {
-//        return this.cards;
-//    }
 
     public void setCards(CardList cards) throws Exception {
         if(this.cards.size() == 0) {

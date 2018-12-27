@@ -1,7 +1,7 @@
 package com.projectbreakpoint.cards;
 
-public enum Suit {
-    SPADES(1), DIAMONDS(2), CLUBS(3), HEARTS(4);
+enum Suit {
+    SPADES(4), DIAMONDS(3), CLUBS(2), HEARTS(1);
 
     @Override
     public String toString() {
@@ -10,17 +10,21 @@ public enum Suit {
         return suit;
     }
 
-    private int num;
-    Suit(int num) {
-        this.num = num;
+    private int value;
+    Suit(int value) {
+        this.value = value;
     }
 
-    public static Suit getSuit(int num) throws Exception {
+    public static Suit getSuit(int value) throws Exception {
         for(Suit suit: Suit.values()) {
-            if(suit.num == num) {
+            if(suit.value == value) {
                 return suit;
             }
         }
         throw new Exception("Invalid numeric value (1-5)");
+    }
+
+    public int getValue() {
+        return this.value;
     }
 }

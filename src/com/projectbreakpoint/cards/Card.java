@@ -2,7 +2,7 @@ package com.projectbreakpoint.cards;
 
 import java.util.Objects;
 
-public class Card {
+public class Card implements Comparable<Card> {
 
     private Suit suit;
     private int value;
@@ -22,6 +22,10 @@ public class Card {
         return this.value;
     }
 
+    public Face getFace() {
+        return this.face;
+    }
+
     @Override
     public String toString() {
         return String.format("| %d  of %s |", this.value, this.suit.toString());
@@ -39,5 +43,10 @@ public class Card {
     @Override
     public int hashCode() {
         return Objects.hash(suit, value);
+    }
+
+    @Override
+    public int compareTo(Card o) {
+        return this.value - o.value;
     }
 }

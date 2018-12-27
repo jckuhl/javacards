@@ -1,6 +1,6 @@
 package com.projectbreakpoint.cards;
 
-public enum Face {
+enum Face {
     ACE(1),
     TWO(2),
     THREE(3),
@@ -13,7 +13,8 @@ public enum Face {
     TEN(10),
     JACK(11),
     KING(12),
-    QUEEN(13);
+    QUEEN(13),
+    JOKER(14);
 
     private int value;
     Face(int value) {
@@ -33,7 +34,7 @@ public enum Face {
                 return face;
             }
         }
-        throw new Exception("Invalid numeric face value, must be between 1-13");
+        throw new Exception("Invalid numeric face value, must be between 1-14");
     }
 
 }

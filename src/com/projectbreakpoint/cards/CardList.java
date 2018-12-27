@@ -90,11 +90,18 @@ final class CardList implements Iterable<Card> {
     }
 
     public void sort(boolean asc) {
-
         if(asc) {
-            this.list.sort((Card c1, Card c2) -> c2.getValue() - c1.getValue());
+            this.list.sort((Card c1, Card c2) -> {
+                int c1Value = c1.getValue() + (c1.getSuit().getValue() * 100);
+                int c2Value = c2.getValue() + (c2.getSuit().getValue() * 100);
+                return c1Value - c2Value;
+            });
         } else {
-            this.list.sort((Card c1, Card c2) -> c1.getValue() - c2.getValue());
+            this.list.sort((Card c1, Card c2) -> {
+                int c1Value = c1.getValue() + (c1.getSuit().getValue() * 100);
+                int c2Value = c2.getValue() + (c2.getSuit().getValue() * 100);
+                return c2Value - c1Value;
+            });
         }
     }
 

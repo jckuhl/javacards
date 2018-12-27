@@ -36,11 +36,6 @@ public class Hand implements CardPlayable, Iterable<Card> {
         this.cards.shuffle();
     }
 
-//    @Override
-//    public CardList getCards() {
-//        return this.cards;
-//    }
-
     @Override
     public String toString() {
         String cards = "";
