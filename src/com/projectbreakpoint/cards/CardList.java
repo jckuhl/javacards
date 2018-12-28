@@ -3,6 +3,7 @@ package com.projectbreakpoint.cards;
 import java.util.*;
 
 /**
+ * @class CardList
  * A composition of ArrayList for a list of cards
  */
 final class CardList implements Iterable<Card> {
@@ -27,7 +28,7 @@ final class CardList implements Iterable<Card> {
      * Creates an empty CardList
      */
     public CardList() {
-        this.list = new ArrayList<Card>();
+        this.list = new ArrayList<>();
     }
 
     /**
@@ -49,6 +50,10 @@ final class CardList implements Iterable<Card> {
 
     public Card remove(int index) {
         return this.list.remove(index);
+    }
+
+    public boolean remove(CardList cards) {
+        return this.list.removeAll(cards.list);
     }
 
     public Card get(int index) {

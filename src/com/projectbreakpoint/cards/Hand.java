@@ -21,6 +21,16 @@ public class Hand implements CardPlayable, Iterable<Card> {
         this.cards = cards;
     }
 
+    public void returnToDeck(Deck deck, Card card) throws Exception {
+        deck.addCard(card);
+        this.cards.remove(card);
+    }
+
+    public void returnToDeck(Deck deck, CardList cards) throws Exception {
+        deck.addCard(cards);
+        this.cards.remove(cards);
+    }
+
     @Override
     public void sort(boolean asc) {
         this.cards.sort(asc);
